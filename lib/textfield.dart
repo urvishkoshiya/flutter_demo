@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/button.dart';
+import 'package:flutter_demo/data_passing.dart';
 
 void main() {
   runApp(
@@ -19,6 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var input = TextEditingController();
   var result;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,15 +57,10 @@ class _MyAppState extends State<MyApp> {
             Container(
               width: 300,
               child: TextField(
-                keyboardType:TextInputType.number,
+                keyboardType: TextInputType.name,
                 controller: input,
                 decoration: InputDecoration(
                   hintText: "enter the name",
-                  prefixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      icon: Icon(Icons.delete)),
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                     color: Colors.red,
@@ -75,17 +72,35 @@ class _MyAppState extends State<MyApp> {
                     width: 3,
                   )),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(50),
                   ),
                 ),
               ),
             ),
             ElevatedButton(
-                onPressed: () {
-                },
-                child: Text("submit",
-                  style: TextStyle(fontSize: 30),
-                ),
+              onPressed: () {
+                if (input.text.toString() == "") {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("please fill the required field"),
+                      duration: Duration(seconds: 5),
+                    ),
+                  );
+                }
+                else
+                  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Data_passing(input.text.toString()),
+                      ),
+                    );
+                  }
+              },
+              child: Text(
+                "submit",
+                style: TextStyle(fontSize: 30),
+              ),
             ),
           ],
         ),
