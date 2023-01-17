@@ -20,13 +20,14 @@ class MyApp extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.blue,
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(80),
-                bottomRight: Radius.circular(80)
+              topLeft: Radius.circular(50),
+              bottomRight: Radius.circular(50),
             ),
-            boxShadow:[
+            boxShadow: [
               BoxShadow(
+                color: Colors.red,
+                spreadRadius: 10,
                 blurRadius: 20,
-                color: Colors.lightBlue,
               ),
             ],
           ),

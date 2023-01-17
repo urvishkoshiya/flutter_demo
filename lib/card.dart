@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       body: Center(
         child: Card(
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(20.0),
             child: Text(
               "Urvish Koshiya",
               style: TextStyle(
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
+          color: Colors.blue,
           elevation: 30,
           shadowColor: Colors.red,
         ),

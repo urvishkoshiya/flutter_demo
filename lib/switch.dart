@@ -16,7 +16,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool b = false;
+  bool b1 = false;
+  bool b2  = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +29,19 @@ class _MyAppState extends State<MyApp> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Switch(
-            value: b,
+            value: b1,
             onChanged: (value) {
-              b = value;
-              setState(() {});
+              setState(() {
+                b1 = value;
+              });
             },
           ),
           SwitchListTile(
+            value: b2,
             title: Text("Switch Listtiles"),
-            value: b,
             onChanged: (value) {
-              b=value;
               setState(() {
-                
+                b2=value;
               });
             },
           )

@@ -35,18 +35,13 @@ class _MyAppState extends State<MyApp> {
               width: 300,
               child: TextField(
                 decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                    color: Colors.green,
-                    width: 3,
-                  )),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                     color: Colors.red,
                     width: 3,
                   )),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
               ),

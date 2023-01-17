@@ -39,8 +39,9 @@ class _MyAppState extends State<MyApp> {
             max: 100,
             divisions: 10,
             onChanged: (value) {
-              val = value;
-              setState(() {});
+              setState(() {
+                val = value;
+              });
             },
           ),
           RangeSlider(
@@ -52,8 +53,9 @@ class _MyAppState extends State<MyApp> {
             activeColor: Colors.deepOrangeAccent,
             inactiveColor: Colors.black,
             onChanged: (value) {
-              rangeValues = value;
-              setState(() {});
+              setState(() {
+                rangeValues = value;
+              });
             },
           ),
         ],
